@@ -1,0 +1,35 @@
+# for List database URl with and without database works
+sqoop list-databases  --connect jdbc:mysql://10.0.2.15:3306/ -username root -password cloudera --verbose
+sqoop list-databases  --connect jdbc:mysql://10.0.2.15:3306/retail_db -username retail_dba -password cloudera --verbose
+	information_schema
+	cm
+	firehose
+	hue
+	metastore
+	mysql
+	nav
+	navms
+	oozie
+	retail_db
+	rman
+	sentry
+
+# for List database URl with and without database works
+sqoop list-databases  --connect jdbc:mysql://10.0.2.15:3306/ -username retail_dba -password cloudera --verbose
+sqoop list-databases  --connect jdbc:mysql://10.0.2.15:3306/retail_db -username root -password cloudera --verbose
+	information_schema
+	retail_db
+
+
+# When you list-tables database should be given as part of url
+sqoop list-tables  --connect jdbc:mysql://10.0.2.15:3306/retail_db -username retail_dba -password cloudera --verbose
+	categories
+	customers
+	departments
+	order_items
+	orders
+	products
+
+
+
+

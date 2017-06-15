@@ -1,0 +1,5 @@
+sqoop eval --connect jdbc:mysql://10.0.2.15:3306/ -u root -pcloudera --query "select count(1) from retail_db.categories"
+
+sqoop eval --connect jdbc:mysql://10.0.2.15:3306/ -username root -password cloudera --query "select count(1) from retail_db.categories" --verbose
+
+sqoop eval --connection-manager "org.apache.sqoop.manager.MySQLManager"  --connect jdbc:mysql://10.0.2.15:3306/ -username root -password cloudera --query "select count(1) from retail_db.categories" --verbose
