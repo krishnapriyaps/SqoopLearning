@@ -1,0 +1,14 @@
+# Import all tables
+sqoop import-all-tables --connect jdbc:mysql://quickstart.cloudera:3306/retail_db --username root --password cloudera --verbose --warehouse-dir hdfs://quickstart.cloudera:8020/user/cloudera/sqoop_import/retail_db
+
+# Import all tables wiht default compression gzip
+sqoop import-all-tables --connect jdbc:mysql://quickstart.cloudera:3306/retail_db --username root --password cloudera --compress --verbose --warehouse-dir hdfs://quickstart.cloudera:8020/user/cloudera/sqoop_import/retail_db_comp_gzip
+
+# Import all tables with snappy compression 
+sqoop import-all-tables --connect jdbc:mysql://quickstart.cloudera:3306/retail_db --username root --password cloudera --compress --compression-codec org.apache.hadoop.io.compress.SnappyCodec --verbose --warehouse-dir hdfs://quickstart.cloudera:8020/user/cloudera/sqoop_import/retail_db_comp_snappy
+
+
+# Import all tables with number of mapper - 10
+sqoop import-all-tables --connect jdbc:mysql://quickstart.cloudera:3306/retail_db --username root --password cloudera -m=10 --verbose --warehouse-dir hdfs://quickstart.cloudera:8020/user/cloudera/sqoop_import/retail_db
+
+
